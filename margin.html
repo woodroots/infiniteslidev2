@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>要素同士のマージンを取る | infinite slide v2 | CSS3 Animationによる無限スクロールを実装するjQueryプラグイン</title>
+<meta name="Keywords" content="無限スクロール,スライド,jQuery,CSS3,keyframe,プラグイン">
+<meta name="Description" content="「infinite slide v2」はCSS3 Animationによる無限スクロールを実装するjQueryプラグインです。設置は分かりやすく、動作は滑らか、カスタマイズも簡単です。">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+<link rel="stylesheet" href="style.css" />
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="infiniteslidev2.js"></script>
+
+<style type="text/css">
+	.slide_margin {
+		display: none;
+	}
+	.slide_margin li {
+		margin-right: 20px;
+	}
+</style>
+
+<script type="text/javascript">
+	$(function(){
+		$('.slide_margin').infiniteslide();
+	});
+</script>
+
+</head>
+<body>
+	<header>
+		<h1>Infiniteslide.js v2デモ | 要素同士のマージンを取る</h1>
+		<p>
+		子要素に対してmarginを設定すれば反映されます。<br />
+スライドの幅はouterWidth(true)で取得しているのでズレることもありません。
+		</p>
+		<p><a href="index.html">infiniteslide.js v2解説ページへ戻る</a></p>
+	</header>
+	
+	<div class="module">
+		<ul class="slide_margin">
+			<li><img src="img/img2.jpg" alt="" /></li>
+			<li><img src="img/img3.jpg" alt="" /></li>
+			<li><img src="img/img6.jpg" alt="" /></li>
+			<li><img src="img/img7.jpg" alt="" /></li>
+			<li><img src="img/img8.jpg" alt="" /></li>
+		</ul>
+	</div>
+	<div class="section">
+	<div class="module">
+		<h3>HTML</h3>
+		<pre><code>
+&lt;ul&nbsp;class=&quot;slide_margin&quot;&gt;
+	&lt;li&gt;&lt;img&nbsp;src=&quot;img/img2.jpg&quot;&nbsp;alt=&quot;&quot;&nbsp;/&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;img&nbsp;src=&quot;img/img3.jpg&quot;&nbsp;alt=&quot;&quot;&nbsp;/&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;img&nbsp;src=&quot;img/img6.jpg&quot;&nbsp;alt=&quot;&quot;&nbsp;/&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;img&nbsp;src=&quot;img/img7.jpg&quot;&nbsp;alt=&quot;&quot;&nbsp;/&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;img&nbsp;src=&quot;img/img8.jpg&quot;&nbsp;alt=&quot;&quot;&nbsp;/&gt;&lt;/li&gt;
+&lt;/ul&gt;
+		</code></pre>
+	</div>
+	
+	<div class="module">
+		<h3>Javascript</h3>
+		<pre><code>
+$('.slide_margin').infiniteslide();
+		</code></pre>
+	</div>
+	
+	<div class="module">
+		<h3>CSS</h3>
+		<pre><code>
+.slide_margin li {
+	margin-right: 20px;
+}
+		</code></pre>
+	</div>
+	</div>
+	
+
+</body>
+</html>

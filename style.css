@@ -1,0 +1,92 @@
+@charset 'utf-8';
+
+
+a:link,a:visited {
+	color: #339;
+}
+a:hover,a:active {
+	color: #66c;
+}
+body > footer a {
+	color: #fff !important;
+	
+}
+body {
+	font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+body > header {
+	padding: 20px;
+	background: #eee;
+}
+body > header h1 {
+	font-family: Times New Roman,sans-serif;
+	font-size: 2em;
+	margin-bottom: 20px;
+}
+body > header h2 {
+	font-weight: bold;
+	margin-top: 20px;
+}
+.module {
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #ccc;
+}
+.module > p {
+	padding: 0 20px;
+}
+.module > h2 {
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 0 20px;
+}
+
+
+.section {
+	background: #eee;
+	padding: 20px;
+}
+.section p {
+	padding: 0;
+}
+.section h1 {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.section .item + .item {
+	margin-top: 40px;
+}
+.section .item h3 {
+	font-weight: bold;
+}
+.section .item dl {
+	display: flex;
+	margin: 10px 0;
+}
+.section .item dl > * {
+	flex: 1;
+	background: #fff;
+	padding: 10px;
+	font-family: Arial,Helvetica,sans-serif;
+}
+.section .item dl > dt {
+	background: #ddd;
+}
+
+body > footer {
+	text-align: center;
+	background: #666;
+	color: #fff;
+	padding: 10px;
+	font-size: 0.8em;
+}
+
+pre {
+	padding: 10px;
+	margin: 20px;
+	background: #eee;
+	overflow: auto;
+}
