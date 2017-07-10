@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>infinite slide v2 | CSS3 Animationによる無限スクロールを実装するjQueryプラグイン</title>
+<meta name="Keywords" content="無限スクロール,スライド,jQuery,CSS3,keyframe,プラグイン">
+<meta name="Description" content="「infinite slide v2」はCSS3 Animationによる無限スクロールを実装するjQueryプラグインです。設置は分かりやすく、動作は滑らか、カスタマイズも簡単です。">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+<link rel="stylesheet" href="style.css" />
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="infiniteslidev2.js"></script>
+
+<style type="text/css">
+	.scroll1,.scroll2,.scroll3,.scroll4,.scroll5,.scroll6 {
+		display: none;
+	}
+	.scroll1 img,.scroll2 img,.scroll3 img,.scroll4 img,.scroll5 img,.scroll6 img {
+		vertical-align: bottom;
+	}
+	.scroll2 .scroll_item {
+		position: relative;
+	}
+	.scroll2 .scroll_item h3 {
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding: 10px;
+		color: #fff;
+		background: rgba(0,0,0,0.5);
+		width: 100%;
+	}
+		
+	.scroll3 {
+		width: 500px;
+		margin: 0 auto;
+	}
+	.scroll4 > * {
+		background: #eee;
+		padding: 10px;
+	}
+	.scroll4 > *:nth-child(even) {
+		background: #ddd;
+	}
+	.scroll6 li {
+		width: 100%;
+	}
+	.scroll6 li img {
+		width: 100%;
+		height: auto;
+	}
+</style>
+
+<script type="text/javascript">
+	$(function(){
+		$('.scroll1').infiniteslide();
+		$('.scroll2').infiniteslide({
+			speed: 200,
+			direction: 'right'
+		});
+		$('.scroll3').infiniteslide({
+			speed: 300,
+			direction: 'down'
+		});
+		$('.scroll4').infiniteslide({
+			pauseonhover: false
+		});
+		$('.scroll5').infiniteslide({
+			speed: 50
+		});
+		$('.scroll6').infiniteslide({
+			speed: 200,
+			responsive: true
+		});
+	});
+</script>
+
+</head>
+<body>
+<header>
+	<h1>Infiniteslide.js v2</h1>
+	<p>
+	要素を無限スクロールさせるjQueryプラグインです。<br />
+	CSS3 Animationを使用しているため、滑らかです。
+	</p>
+	<h2>対応ブラウザ</h2>
+	<p>
+	Flexboxと@keyframeを使用してるため、IE10以上、Android4.4以上に対応します。
+	</p>
+
+	<h2>ダウンロード</h2>
+	<p>
+	<a href="https://github.com/woodroots/infiniteslidev2" target="_blank">GitHub</a>
+	</p>
+
+</header>
+
+<div class="module">
+	<h2>画像のみ</h2>
+	<ul class="scroll1">
+		<li><img src="img/img2.jpg" alt="" /></li>
+		<li><img src="img/img3.jpg" alt="" /></li>
+		<li><img src="img/img6.jpg" alt="" /></li>
+		<li><img src="img/img8.jpg" alt="" /></li>
+	</ul>
+	
+	<pre><code>
+$('.scroll1').infiniteslide();
+	</code></pre>
+</div>
+
+<div class="module">
+	<h2>画像とテキストが混合した要素</h2>
+	<div class="scroll2">
+		<a href="http://google.com">
+			<div class="scroll_item">
+				<h3>たとえば商品バナーのような</h3>
+				<div class="img">
+					<img src="img/img2.jpg" alt="" />
+				</div>
+			</div>
+		</a>
+		<a href="http://google.com">
+			<div class="scroll_item">
+				<h3>おすすめ商品を</h3>
+				<div class="img">
+					<img src="img/img3.jpg" alt="" />
+				</div>
+			</div>
+		</a>
+		<a href="http://google.com">
+			<div class="scroll_item">
+				<h3>写真と文字セットで</h3>
+				<div class="img">
+					<img src="img/img7.jpg" alt="" />
+				</div>
+			</div>
+		</a>
+		<a href="http://google.com">
+			<div class="scroll_item">
+				<h3>たくさん見せることができます</h3>
+				<div class="img">
+					<img src="img/img9.jpg" alt="" />
+				</div>
+			</div>
+		</a>
+	</div>
+	<pre><code>
+$('.scroll2').infiniteslide({
+	speed: 200,
+	direction: 'right'
+});
+	</code></pre>
+</div>
+
+<div class="module">
+	<h2>縦型</h2>
+	<ul class="scroll3">
+		<li><a href="http://yahoo.co.jp"><img src="img/img2.jpg" alt="" /></a></li>
+		<li><a href="http://yahoo.co.jp"><img src="img/img3.jpg" alt="" /></a></li>
+		<li><a href="http://yahoo.co.jp"><img src="img/img6.jpg" alt="" /></a></li>
+		<li><a href="http://yahoo.co.jp"><img src="img/img7.jpg" alt="" /></a></li>
+		<li><a href="http://yahoo.co.jp"><img src="img/img8.jpg" alt="" /></a></li>
+	</ul>
+
+	<pre><code>
+$('.scroll3').infiniteslide({
+	speed: 300,
+	direction: 'down'
+});
+	</code></pre>
+
+</div>
+
+<div class="module">
+	<h2>文字だけ(ホバーしても停止しない）</h2>
+	<ul class="scroll4">
+		<li>2020.00.00 ニュースティッカーのような</li>
+		<li>2020.00.00 新着情報を</li>
+		<li>2020.00.00 電光掲示板みたく見せることが</li>
+		<li>2020.00.00 できます。</li>
+		<li>2020.00.00 <a href="#">リンクにしてもいいですね。</a></li>
+	</ul>
+
+	<pre><code>
+$('.scroll4').infiniteslide({
+	pauseonhover: false
+});
+	</code></pre>
+</div>
+
+<div class="module">
+	<h2>高さが異なる場合</h2>
+	<div class="scroll5">
+		<div class="scroll_item">
+			<img src="img/img1.jpg" alt="" />
+		</div>
+		<div class="scroll_item">
+			<img src="img/img2.jpg" alt="" />
+		</div>
+		<div class="scroll_item">
+			<img src="img/img3.jpg" alt="" />
+		</div>
+		<div class="scroll_item">
+			<img src="img/img4.jpg" alt="" />
+		</div>
+	</div>
+
+	<pre><code>
+$('.scroll5').infiniteslide({
+	speed: 50
+});
+	</code></pre>
+	
+	<p>スライドはalign-items: center;になっています。<br />
+	上揃え、下揃えにしたい場合はalign-items:flex-start !important;やalign-items:flex-end !important;にしてください。
+	</p>
+
+
+</div>
+
+<div class="module">
+	<h2>レスポンシブ対応</h2>
+	<ul class="scroll6">
+		<li><img src="img/img2.jpg" alt="" /></li>
+		<li><img src="img/img3.jpg" alt="" /></li>
+		<li><img src="img/img6.jpg" alt="" /></li>
+		<li><img src="img/img7.jpg" alt="" /></li>
+	</ul>
+
+	<pre><code>
+$('.scroll6').infiniteslide({
+	speed: 200,
+	responsive: true
+});
+	</code></pre>
+
+
+</div>
+
+<div class="section">
+	<h1>オプション</h1>
+	<div class="module">
+		<div class="item">
+			<h3>speed</h3>
+			<dl>
+				<dt>Type:</dt>
+				<dd>integral</dd>
+				<dt>Default:</dt>
+				<dd>100</dd>
+			</dl>
+			<p>
+			スライドの速さを指定します。単位はpx/秒です。
+			</p>
+			
+		</div>
+		<div class="item">
+			<h3>direction</h3>
+			<dl>
+				<dt>Type:</dt>
+				<dd>string</dd>
+				<dt>Default:</dt>
+				<dd>'left'</dd>
+			</dl>
+			<p>
+			スライドの向きを指定します。<br />
+			「left」「right」「up」「down」から選択して指定してください。
+			</p>
+			
+		</div>
+		
+		<div class="item">
+			<h3>pauseonhover</h3>
+			<dl>
+				<dt>Type:</dt>
+				<dd>boolean</dd>
+				<dt>Default:</dt>
+				<dd>true</dd>
+			</dl>
+			<p>
+			マウスオーバーで停止させるかどうかを選択します。「true」か「false」で指定してください。
+			</p>
+			
+		</div>
+		
+		<div class="item">
+			<h3>responsive</h3>
+			<dl>
+				<dt>Type:</dt>
+				<dd>boolean</dd>
+				<dt>Default:</dt>
+				<dd>false</dd>
+			</dl>
+			<p>
+			trueの場合、ウインドウリサイズ時に幅や高さを再取得します。<br />
+			スライドの子要素の幅や高さを%で指定している場合はtrueにしてください。
+			</p>
+			
+		</div>
+		
+		
+	</div>
+
+	<h1>カスタマイズ</h1>
+	<p>
+	CSSだけで様々なレイアウトに対応できます。
+	</p>
+	<div class="module">
+		<div class="item">
+			<h3>縦スクロールで画面端に設置</h3>
+			<p><a href="vertical.html">DEMO</a></p>
+		</div>
+		<div class="item">
+			<h3>要素同士のマージンを取る</h3>
+			<p><a href="margin.html">DEMO</a></p>
+		</div>
+
+	</div>
+
+	<h1>トラブルシューティング</h1>
+	<div class="module">
+		<div class="item">
+			<h3>画像を使った場合、ロード時に一瞬画像が縦並びで表示されてしまう</h3>
+			<p>
+			スライド対象要素をCSSでdisplay: none;しておいてください。<br />
+			画像ロード後にプラグインがdisplay:flex;に設定します。
+			</p>
+		</div>
+		<div class="item">
+			<h3>スライドがループにならない</h3>
+			<p>
+			子要素の数が足りないのかもしれません。<br />
+横方向へのスライドの場合、子要素の幅合計が想定ウインドウサイズの2分の1以上でないと途切れます。<br />
+縦方向の場合、子要素の高さ合計が想定ウインドウサイズの2分の1以上が必要です。
+			</p>
+		</div>
+	</div>
+
+	<h1>バグ報告やご要望</h1>
+	<div class="module">
+		<p>
+		<a href="http://wood-roots.com/?p=1975" target="_blank">ブログ記事</a>のコメント欄か<a href="https://github.com/woodroots/infiniteslidev2" target="_blank">GithubへのPull RequestやIssues</a>でお願いします。
+		</p>
+	</div>
+
+	<h1>免責</h1>
+	<div class="module">
+		<p>
+		当プラグインを使用して発生した損害やトラブルにつきましては一切の責任を負いません。<br />
+		ご自身の責任と判断の上でご利用ください。
+		</p>
+	</div>
+
+	<h1>ライセンス</h1>
+	<div class="module">
+		<p>
+		MIT licenseです。<br />
+		商用・非商用問わずご自由にご利用ください。
+		</p>
+	</div>
+</div>
+
+<footer>
+	&copy; <a href="http://wood-roots.com" target="_blank">Wood-Roots:blog</a>
+</footer>
+
+</body>
+</html>
