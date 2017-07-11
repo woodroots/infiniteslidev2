@@ -30,6 +30,7 @@
 		color: #fff;
 		background: rgba(0,0,0,0.5);
 		width: 100%;
+		box-sizing: border-box;
 	}
 		
 	.scroll3 {
@@ -56,12 +57,12 @@
 	$(function(){
 		$('.scroll1').infiniteslide();
 		$('.scroll2').infiniteslide({
-			speed: 200,
+			speed: 100,
 			direction: 'right'
 		});
 		$('.scroll3').infiniteslide({
 			speed: 300,
-			direction: 'down'
+			direction: 'up'
 		});
 		$('.scroll4').infiniteslide({
 			pauseonhover: false
@@ -72,6 +73,10 @@
 		$('.scroll6').infiniteslide({
 			speed: 200,
 			responsive: true
+		});
+		$('.scroll7').infiniteslide({
+			direction: 'right',
+			clone: 10
 		});
 	});
 </script>
@@ -102,7 +107,9 @@
 		<li><img src="img/img2.jpg" alt="" /></li>
 		<li><img src="img/img3.jpg" alt="" /></li>
 		<li><img src="img/img6.jpg" alt="" /></li>
+		<li><img src="img/img7.jpg" alt="" /></li>
 		<li><img src="img/img8.jpg" alt="" /></li>
+		<li><img src="img/img9.jpg" alt="" /></li>
 	</ul>
 	
 	<pre><code>
@@ -145,6 +152,30 @@ $('.scroll1').infiniteslide();
 				</div>
 			</div>
 		</a>
+		<a href="http://google.com">
+			<div class="scroll_item">
+				<h3>通販サイトだけでなく</h3>
+				<div class="img">
+					<img src="img/img2.jpg" alt="" />
+				</div>
+			</div>
+		</a>
+		<a href="http://google.com">
+			<div class="scroll_item">
+				<h3>ブログのおすすめ記事に使うのも</h3>
+				<div class="img">
+					<img src="img/img3.jpg" alt="" />
+				</div>
+			</div>
+		</a>
+		<a href="http://google.com">
+			<div class="scroll_item">
+				<h3>いいかもしれませんね。</h3>
+				<div class="img">
+					<img src="img/img7.jpg" alt="" />
+				</div>
+			</div>
+		</a>
 	</div>
 	<pre><code>
 $('.scroll2').infiniteslide({
@@ -181,6 +212,7 @@ $('.scroll3').infiniteslide({
 		<li>2020.00.00 電光掲示板みたく見せることが</li>
 		<li>2020.00.00 できます。</li>
 		<li>2020.00.00 <a href="#">リンクにしてもいいですね。</a></li>
+		<li>2020.00.00 長い文字でもずれたりしませーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーん。</li>
 	</ul>
 
 	<pre><code>
@@ -204,6 +236,18 @@ $('.scroll4').infiniteslide({
 		</div>
 		<div class="scroll_item">
 			<img src="img/img4.jpg" alt="" />
+		</div>
+		<div class="scroll_item">
+			<img src="img/img5.jpg" alt="" />
+		</div>
+		<div class="scroll_item">
+			<img src="img/img6.jpg" alt="" />
+		</div>
+		<div class="scroll_item">
+			<img src="img/img7.jpg" alt="" />
+		</div>
+		<div class="scroll_item">
+			<img src="img/img8.jpg" alt="" />
 		</div>
 	</div>
 
@@ -238,6 +282,28 @@ $('.scroll6').infiniteslide({
 
 
 </div>
+
+
+<div class="module">
+	<h2>枚数が足りない場合</h2>
+	<p>HTML上は2枚の画像しかありませんが、clone:10と指定することで20枚の画像が追加されます。<br />
+子要素が少ないときにご利用ください。
+</p>
+	<ul class="scroll7">
+		<li><img src="img/img2.jpg" alt="" /></li>
+		<li><img src="img/img7.jpg" alt="" /></li>
+	</ul>
+
+	<pre><code>
+$('.scroll7').infiniteslide({
+	direction: 'right',
+	clone: 10
+});
+	</code></pre>
+
+
+</div>
+
 
 <div class="section">
 	<h1>オプション</h1>
@@ -299,6 +365,20 @@ $('.scroll6').infiniteslide({
 			
 		</div>
 		
+		<div class="item">
+			<h3>clone</h3>
+			<dl>
+				<dt>Type:</dt>
+				<dd>integral</dd>
+				<dt>Default:</dt>
+				<dd>1</dd>
+			</dl>
+			<p>
+			infiniteslide.js v2は無限のスクロールにするために子要素を複製して追加しますが、子要素の幅・高さが少ない場合は無限ループにならず途切れることがあります。その場合子要素の複製回数をcloneオプションで増やすことができます。
+			</p>
+			
+		</div>
+		
 		
 	</div>
 
@@ -331,8 +411,10 @@ $('.scroll6').infiniteslide({
 			<h3>スライドがループにならない</h3>
 			<p>
 			子要素の数が足りないのかもしれません。<br />
-横方向へのスライドの場合、子要素の幅合計が想定ウインドウサイズの2分の1以上でないと途切れます。<br />
-縦方向の場合、子要素の高さ合計が想定ウインドウサイズの2分の1以上が必要です。
+横方向へのスライドの場合、子要素の幅合計が想定ウインドウ幅以上でないと途切れます。<br />
+縦方向の場合、子要素の高さ合計が想定ウインドウ高さ以上が必要です。<br />
+<br />
+そんなに子要素たくさん用意できないよ！という場合、cloneオプションを2以上にしてください。
 			</p>
 		</div>
 	</div>
