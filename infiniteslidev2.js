@@ -1,6 +1,6 @@
 /*
 infiniteslide.js v2
-version: 2.0
+version: 2.0.1
 Author: T.Morimoto
 
 Copyright 2017, T.Morimoto
@@ -18,7 +18,8 @@ https://github.com/woodroots/infiniteslidev2
 				'speed': 100, //速さ　単位はpx/秒です。
 				'direction': 'left', //up/down/left/rightから選択
 				'pauseonhover': true, //マウスオーバーでストップ
-				'responsive': false //子要素の幅を%で指定しているとき
+				'responsive': false, //子要素の幅を%で指定しているとき
+				'clone': 1
 			},options);
 			
 			var setCss = function(obj,direction){
@@ -44,8 +45,13 @@ https://github.com/woodroots/infiniteslidev2
 					});
 			}
 			
-			var setClone = function(obj){
-				$(obj).children().clone().addClass('infiniteslide_clone').appendTo($(obj));
+			var setClone = function(obj,clone){
+				var $clone = $(obj).children().clone().addClass('infiniteslide_clone');
+				i = 1;
+				while(i <= clone){
+					$clone.clone().appendTo($(obj));
+					i++;
+				}
 			}
 			
 			var getWidth = function(obj){
@@ -143,7 +149,7 @@ https://github.com/woodroots/infiniteslidev2
 				}
 				$(window).on('load',function(){
 					setCss($this,settings.direction);
-					setClone($this);
+					setClone($this,settings.clone);
 					setAnim($this,num,settings.direction,settings.speed);
 					
 					if(settings.responsive){
