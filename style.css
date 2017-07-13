@@ -47,8 +47,10 @@ body > header h2 {
 
 
 .section {
-	background: #eee;
 	padding: 20px;
+}
+.section_bg {
+	background: #f0f0f0;
 }
 .section p {
 	padding: 0;
