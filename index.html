@@ -12,6 +12,14 @@
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="infiniteslidev2.js"></script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/agate.min.css
+">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
 <style type="text/css">
 	.scroll1,.scroll2,.scroll3,.scroll4,.scroll5,.scroll6 {
 		display: none;
@@ -62,7 +70,7 @@
 		});
 		$('.scroll3').infiniteslide({
 			speed: 300,
-			direction: 'up'
+			direction: 'down'
 		});
 		$('.scroll4').infiniteslide({
 			pauseonhover: false
@@ -112,7 +120,7 @@
 		<li><img src="img/img9.jpg" alt="" /></li>
 	</ul>
 	
-	<pre><code>
+	<pre><code class="javascript">
 $('.scroll1').infiniteslide();
 	</code></pre>
 </div>
@@ -177,7 +185,7 @@ $('.scroll1').infiniteslide();
 			</div>
 		</a>
 	</div>
-	<pre><code>
+	<pre><code class="javascript">
 $('.scroll2').infiniteslide({
 	speed: 200,
 	direction: 'right'
@@ -195,7 +203,7 @@ $('.scroll2').infiniteslide({
 		<li><a href="http://yahoo.co.jp"><img src="img/img8.jpg" alt="" /></a></li>
 	</ul>
 
-	<pre><code>
+	<pre><code class="javascript">
 $('.scroll3').infiniteslide({
 	speed: 300,
 	direction: 'down'
@@ -215,7 +223,7 @@ $('.scroll3').infiniteslide({
 		<li>2020.00.00 長い文字でもずれたりしませーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーん。</li>
 	</ul>
 
-	<pre><code>
+	<pre><code class="javascript">
 $('.scroll4').infiniteslide({
 	pauseonhover: false
 });
@@ -251,7 +259,7 @@ $('.scroll4').infiniteslide({
 		</div>
 	</div>
 
-	<pre><code>
+	<pre><code class="javascript">
 $('.scroll5').infiniteslide({
 	speed: 50
 });
@@ -273,7 +281,7 @@ $('.scroll5').infiniteslide({
 		<li><img src="img/img7.jpg" alt="" /></li>
 	</ul>
 
-	<pre><code>
+	<pre><code class="javascript">
 $('.scroll6').infiniteslide({
 	speed: 200,
 	responsive: true
@@ -294,7 +302,7 @@ $('.scroll6').infiniteslide({
 		<li><img src="img/img7.jpg" alt="" /></li>
 	</ul>
 
-	<pre><code>
+	<pre><code class="javascript">
 $('.scroll7').infiniteslide({
 	direction: 'right',
 	clone: 10
@@ -304,8 +312,55 @@ $('.scroll7').infiniteslide({
 
 </div>
 
-
 <div class="section">
+	<h1>基本的な使い方</h1>
+	<p>jQueryとinfiniteslidev2.jsをscriptタグで読み込みます。<br />
+		jQueryは1.x、2.xで動作します。
+	</p>
+		<pre><code class="html">&lt;script&nbsp;src=&quot;https://code.jquery.com/jquery-1.12.4.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&nbsp;src=&quot;infiniteslidev2.js&quot;&gt;&lt;/script&gt;</code></pre>
+	
+	<p>
+	スライドにしたい要素に好きなクラスを付けます。
+	</p>
+	
+		<pre><code class="html">&lt;!--&nbsp;たとえばulの場合&nbsp;--&gt;
+&lt;ul&nbsp;class=&quot;infiniteslide&quot;&gt;
+	&lt;li&gt;&lt;img&nbsp;src=&quot;img/img1.jpg&quot;&nbsp;alt=&quot;&quot;&nbsp;/&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;img&nbsp;src=&quot;img/img2.jpg&quot;&nbsp;alt=&quot;&quot;&nbsp;/&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;img&nbsp;src=&quot;img/img3.jpg&quot;&nbsp;alt=&quot;&quot;&nbsp;/&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;img&nbsp;src=&quot;img/img4.jpg&quot;&nbsp;alt=&quot;&quot;&nbsp;/&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--&nbsp;divの場合&nbsp;--&gt;
+&lt;div&nbsp;class=&quot;infiniteslide&quot;&gt;
+	&lt;div&nbsp;class=&quot;item&quot;&gt;
+		&lt;h3&gt;テキストテキスト&lt;/h3&gt;
+		&lt;img&nbsp;src=&quot;img/img1.jpg&quot;&nbsp;alt=&quot;&quot;&nbsp;/&gt;
+	&lt;/div&gt;
+	&lt;div&nbsp;class=&quot;item&quot;&gt;
+		&lt;h3&gt;テキストテキスト&lt;/h3&gt;
+		&lt;img&nbsp;src=&quot;img/img1.jpg&quot;&nbsp;alt=&quot;&quot;&nbsp;/&gt;
+	&lt;/div&gt;
+	&lt;div&nbsp;class=&quot;item&quot;&gt;
+		&lt;h3&gt;テキストテキスト&lt;/h3&gt;
+		&lt;img&nbsp;src=&quot;img/img1.jpg&quot;&nbsp;alt=&quot;&quot;&nbsp;/&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+	
+	<p>
+	外部JSファイルやHTML内で実行します。
+	</p>
+	<pre><code class="javascript">$(function(){
+	$('.infiniteslide').infiniteslide({
+		//オプションを書く
+	});
+});</code></pre>
+	
+</div>
+
+
+<div class="section section_bg">
 	<h1>オプション</h1>
 	<div class="module">
 		<div class="item">
