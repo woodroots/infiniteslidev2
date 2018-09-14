@@ -1,0 +1,29 @@
+{
+  "name": "infiniteslidev2",
+  "version": "2.0.1",
+  "description": "要素を無限スクロールさせるjQueryプラグインです。CSS3 Animationを使用しているため、滑らかです。",
+  "main": "infiniteslidev2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woodroots/infiniteslidev2.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "slider",
+    "carousel",
+    "infinite",
+    "js"
+  ],
+  "author": "woodroots",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/woodroots/infiniteslidev2/issues"
+  },
+  "homepage": "https://wood-roots.com",
+  "dependencies": {
+    "jquery": ">= 1.8.0, < 3.0.0"
+  }
+}
