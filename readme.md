@@ -19,6 +19,10 @@ Sorry japanese only.
 ## Usage
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script src="infiniteslidev2.js"></script>
+	<!--
+	if using jsdelivr,write this.
+	<script src="https://cdn.jsdelivr.net/npm/infiniteslidev2/infiniteslidev2.min.js"></script>
+	-->
 	<script type="text/javascript">
 		$(function(){
 			$('.infiniteslide').infiniteslide({
@@ -52,15 +56,15 @@ Sorry japanese only.
 
 
 ## History
-2018.09.17 English readme add.
-2017.07.11 clone option add.
-2017.07.10 release.
+2018.09.17 English readme add. 
+2017.07.11 clone option add. 
+2017.07.10 release. 
 
 
+<a name="ja"></a>
 
 ## 日本語の解説
 
-<a name="ja"></a>
 要素を無限スクロールさせるjQueryプラグインです。
 CSS3 Animationを使用しているため、滑らかです。
 
@@ -78,6 +82,10 @@ Flexboxと@keyframeによるアニメーションを使用しているため、I
 
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script src="infiniteslidev2.js"></script>
+	<!--
+	jsDelivrから読み込む場合は下記のように記述してください。
+	<script src="https://cdn.jsdelivr.net/npm/infiniteslidev2/infiniteslidev2.min.js"></script>
+	-->
 
 	<script type="text/javascript">
 		$(function(){
@@ -114,6 +122,6 @@ Flexboxと@keyframeによるアニメーションを使用しているため、I
 
 
 ## 更新情報
-2018.09.17 英語のreadmeを作成（なお作者の英語力は…）
-2017.07.11 cloneオプションの追加。
-2017.07.10 初版公開
+2018.09.17 英語のreadmeを作成（なお作者の英語力は…） 
+2017.07.11 cloneオプションの追加。 
+2017.07.10 初版公開 
