@@ -11,6 +11,9 @@ https://github.com/woodroots/infiniteslidev2
 */
 
 (function($){
+	$(window).on('load', function() {
+	    window.loaded = true;
+	});
 	$(function(){
 		$.fn.infiniteslide = function(options){
 			//option
@@ -147,7 +150,7 @@ https://github.com/woodroots/infiniteslidev2
 				if(settings.pauseonhover == true){
 					setStop($this);
 				}
-				$(window).on('load',function(){
+				var _onload = function(){
 					setCss($this,settings.direction);
 					setClone($this,settings.clone);
 					setAnim($this,num,settings.direction,settings.speed);
@@ -163,7 +166,13 @@ https://github.com/woodroots/infiniteslidev2
 
 						});
 					}
-				});
+				};
+
+				if (window.loaded) {
+					_onload();
+				} else {
+					$(window).on('load', _onload);
+				}
 			});
 			
 		}
