@@ -49,10 +49,10 @@ https://github.com/woodroots/infiniteslidev2
 			}
 			
 			var setClone = function(obj,clone){
-				var $clone = $(obj).children().clone().addClass('infiniteslide_clone');
+				var $clone = $(obj).children().clone(true).addClass('infiniteslide_clone');
 				i = 1;
 				while(i <= clone){
-					$clone.clone().appendTo($(obj));
+					$clone.clone(true).appendTo($(obj));
 					i++;
 				}
 			}
