@@ -1,70 +1,74 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8" />
-<title>infinite slide v2 | CSS3 Animationによる無限スクロールを実装するjQueryプラグイン</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="Keywords" content="無限スクロール,スライド,jQuery,CSS3,keyframe,プラグイン">
-<meta name="Description" content="「infinite slide v2」はCSS3 Animationによる無限スクロールを実装するjQueryプラグインです。設置は分かりやすく、動作は滑らか、カスタマイズも簡単です。">
+  <meta charset="UTF-8" />
+  <title>infinite slide v2 | CSS3 Animationによる無限スクロールを実装するjQueryプラグイン</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="Keywords" content="無限スクロール,スライド,jQuery,CSS3,keyframe,プラグイン">
+  <meta name="Description"
+    content="「infinite slide v2」はCSS3 Animationによる無限スクロールを実装するjQueryプラグインです。設置は分かりやすく、動作は滑らか、カスタマイズも簡単です。">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
-<link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+  <link rel="stylesheet" href="style.css" />
 
 
 
 
-<style type="text/css">
-.gallery {
-  margin-bottom: 98px;
-}
+  <style type="text/css">
+    .gallery {
+      margin-bottom: 98px;
+    }
 
-.gallery__img {
-  height: 200px;
-}
-</style>
+    .gallery__img {
+      height: 200px;
+    }
+  </style>
 
 </head>
+
 <body>
 
-<div>
-	<p>
-	あああああああああああああああああああああ
-	ああああああああああああああああああああああああああああああああ
-	ああああああああああああああああああああ
-	ああああああああああああああああああああああ
-	</p>
-</div>
+  <div>
+    <p>
+      あああああああああああああああああああああ
+      ああああああああああああああああああああああああああああああああ
+      ああああああああああああああああああああ
+      ああああああああああああああああああああああ
+    </p>
+  </div>
 
-<div id="js-infiniteslide" class="gallery">
-  <img class="gallery__img" src="img/img1.jpg" alt="">
-  <img class="gallery__img" src="img/img2.jpg" alt="">
-  <img class="gallery__img" src="img/img3.jpg" alt="">
-  <img class="gallery__img" src="img/img4.jpg" alt="">
-</div>
+  <div id="js-infiniteslide" class="gallery">
+    <img class="gallery__img" src="img/img1.jpg" alt="">
+    <img class="gallery__img" src="img/img2.jpg" alt="">
+    <img class="gallery__img" src="img/img3.jpg" alt="">
+    <img class="gallery__img" src="img/img4.jpg" alt="">
+  </div>
 
-<div>
-	<p>
-	あああああああああああああああああああああ
-	ああああああああああああああああああああああああああああああああ
-	ああああああああああああああああああああ
-	ああああああああああああああああああああああ
-	</p>
-</div>
+  <div>
+    <p>
+      あああああああああああああああああああああ
+      ああああああああああああああああああああああああああああああああ
+      ああああああああああああああああああああ
+      ああああああああああああああああああああああ
+    </p>
+  </div>
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script src="infiniteslidev2.js"></script>
-<script>
-  $(function(){
-    $('#js-infiniteslide').infiniteslide({
-      'speed': 50, //速さ　単位はpx/秒です。
-      'direction': 'left', //up/down/left/rightから選択
-      'pauseonhover': false, //マウスオーバーでストップ
-      'responsive': false, //子要素の幅を%で指定しているとき
-      'clone': 1 //子要素の複製回数
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="infiniteslidev2.js"></script>
+  <script>
+    $(function () {
+      $('#js-infiniteslide').infiniteslide({
+        'speed': 50, //速さ　単位はpx/秒です。
+        'direction': 'left', //up/down/left/rightから選択
+        'pauseonhover': false, //マウスオーバーでストップ
+        'responsive': false, //子要素の幅を%で指定しているとき
+        'clone': 1 //子要素の複製回数
+      });
     });
-  });
-</script>
+  </script>
 </body>
+
 </html>

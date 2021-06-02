@@ -56,8 +56,9 @@ Sorry japanese only.
 
 
 ## History
-2018.09.17 English readme add. 
-2017.07.11 clone option add. 
+2021.06.02 Support only jQuery3.x  
+2018.09.17 English readme add. 　
+2017.07.11 clone option add. 　
 2017.07.10 release. 
 
 
@@ -80,7 +81,7 @@ Flexboxと@keyframeによるアニメーションを使用しているため、I
 
 ## 使い方
 
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="infiniteslidev2.js"></script>
 	<!--
 	jsDelivrから読み込む場合は下記のように記述してください。
@@ -122,6 +123,7 @@ Flexboxと@keyframeによるアニメーションを使用しているため、I
 
 
 ## 更新情報
-2018.09.17 英語のreadmeを作成（なお作者の英語力は…） 
-2017.07.11 cloneオプションの追加。 
-2017.07.10 初版公開 
+2021.06.02 jQuery3.xのみサポート  
+2018.09.17 英語のreadmeを作成（なお作者の英語力は…）  
+2017.07.11 cloneオプションの追加。  
+2017.07.10 初版公開  
