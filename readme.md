@@ -17,7 +17,7 @@ Sorry japanese only.
 <http://wood-roots.com/?p=1975>
 
 ## Usage
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="infiniteslidev2.js"></script>
 	<!--
 	if using jsdelivr,write this.
