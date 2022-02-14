@@ -50,7 +50,7 @@ https://github.com/woodroots/infiniteslidev2
 			
 			var setClone = function(obj,clone){
 				var $clone = $(obj).children().clone(true).addClass('infiniteslide_clone');
-				i = 1;
+				var i = 1;
 				while(i <= clone){
 					$clone.clone(true).appendTo($(obj));
 					i++;
@@ -58,14 +58,14 @@ https://github.com/woodroots/infiniteslidev2
 			}
 			
 			var getWidth = function(obj){
-				w = 0;
+				var w = 0;
 				$(obj).children(':not(.infiniteslide_clone)').each(function(key,value){
 					w = w + $(this).outerWidth(true);
 				});
 				return w;
 			}
 			var getHeight = function(obj){
-				h = 0;
+				var h = 0;
 				$(obj).children(':not(.infiniteslide_clone)').each(function(key,value){
 					h = h + $(this).outerHeight(true);
 				});
@@ -77,10 +77,11 @@ https://github.com/woodroots/infiniteslidev2
 				return l / s;
 			}
 			var getNum = function(obj,direction){
+				var num = 0;
 				if(direction == 'up' || direction == 'down'){
-					var num = getHeight(obj);
+					num = getHeight(obj);
 				} else {
-					var num = getWidth(obj);
+					num = getWidth(obj);
 				}
 				return num;
 			}
@@ -136,11 +137,10 @@ https://github.com/woodroots/infiniteslidev2
 			}
 			
 			var setResponsive = function(obj,direction){
-					var num = getNum(obj,direction);
-					var i = getTranslate(num,direction);
-					return i;
-				};
-			
+				var num = getNum(obj,direction);
+				var i = getTranslate(num,direction);
+				return i;
+			};
 			
 			
 		
